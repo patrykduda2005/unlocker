@@ -1,0 +1,2 @@
+gamerule doLimitedCrafting true
+gamerule reducedDebugInfo true

@@ -1,0 +1,1 @@
+function community_unlocker:__manage_fish

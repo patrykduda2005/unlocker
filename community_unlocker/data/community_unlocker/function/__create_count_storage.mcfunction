@@ -1,0 +1,2 @@
+execute store result storage minecraft:__variable__ count.value int 1 run scoreboard players get $storage_count_value __variable__
+$data modify storage minecraft:__variable__ count.item set value $(item)

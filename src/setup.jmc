@@ -1,0 +1,26 @@
+
+//Enabled/disabled
+function __setup_scoreboards() {
+    $carrot_enabled = false;
+    $potatoes_enabled = false;
+    $wheat_enabled = false;
+    $cooked_fish_enabled = false;
+    $iron_enabled = false;
+
+    $wb_distance = 20;
+}
+
+function __setup_gamerules() {
+    gamerule doLimitedCrafting true;
+    gamerule reducedDebugInfo true;
+}
+
+__setup_scoreboards();
+__setup_dyn_variables();
+__setup_gamerules();
+
+
+
+
+worldborder center 0 0;
+__set_wb_distance(distance="10");

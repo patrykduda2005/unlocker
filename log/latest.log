@@ -1,0 +1,577 @@
+2024-07-26 22:49:47,308 | jmc.__main__ | INFO | Argv: ['/home/duda/.local/bin/jmc']
+2024-07-26 22:49:47,310 | jmc.__main__ | INFO | Args: Namespace(command=None)
+2024-07-26 22:49:47,310 | jmc.__main__ | INFO | Starting session
+2024-07-26 22:49:47,312 | jmc.terminal.main | INFO | Build-version: v1.2.17
+2024-07-26 22:49:50,210 | jmc.terminal.utils | INFO | Input from user: compile
+2024-07-26 22:49:50,211 | jmc.compile.compiling | INFO | Configuration:
+{
+    "namespace": "community_unlocker",
+    "description": "Lock minecraft progression behind global achievments",
+    "pack_format": "48",
+    "target": "src/main.jmc",
+    "output": "community_unlocker"
+}
+2024-07-26 22:49:50,211 | jmc.compile.compiling | INFO | Header file found.
+2024-07-26 22:49:50,211 | jmc.compile.compiling | INFO | Parsing /home/duda/Code/jmc/unlocker/src/main.hjmc
+2024-07-26 22:49:50,212 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,212 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,212 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,213 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,213 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,213 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,213 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,214 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,214 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,214 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,215 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,215 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,215 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,216 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,217 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,218 | jmc.compile.exception | WARNING | HeaderSyntaxException
+Invalid macro argument syntax
+2024-07-26 22:49:50,218 | jmc.compile.compiling | INFO | Parsing
+2024-07-26 22:49:50,219 | jmc.compile.lexer | INFO | Parsing file: /home/duda/Code/jmc/unlocker/src/main.jmc
+2024-07-26 22:49:50,224 | jmc.compile.lexer | INFO | Parsing file: /home/duda/Code/jmc/unlocker/src/loot_tables.jmc
+2024-07-26 22:49:50,239 | jmc.compile.lexer | INFO | Parsing file: /home/duda/Code/jmc/unlocker/src/dyn_variables.jmc
+2024-07-26 22:49:50,250 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/dyn_variables.jmc:23:11
+Expected operator or 'matches' (got Keyword) at line 23 col 11.
+22 |    execute store result storage minecraft:__variable__ count.value int 1 run $storage_count_value.get();
+23 |    $data modify storage minecraft:__variable__ count.item set value $(item);
+              ^^^^^^
+24 |}
+2024-07-26 22:49:50,255 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/dyn_variables.jmc:35:11
+Expected operator or 'matches' (got Keyword) at line 35 col 11.
+34 |    STORE_RESULT item_data.model_data SCORE $storage_item_data_model_data.get();
+35 |    $data modify storage minecraft:__variable__ item_data.item_name set value $(item_name);
+              ^^^^^^
+36 |    $data modify storage minecraft:__variable__ item_data.rarity set value $(rarity);
+2024-07-26 22:49:50,256 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/dyn_variables.jmc:36:11
+Expected operator or 'matches' (got Keyword) at line 36 col 11.
+35 |    $data modify storage minecraft:__variable__ item_data.item_name set value $(item_name);
+36 |    $data modify storage minecraft:__variable__ item_data.rarity set value $(rarity);
+              ^^^^^^
+37 |    $data modify storage minecraft:__variable__ item_data.visible_item_name set value $(visible_item_name);
+2024-07-26 22:49:50,256 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/dyn_variables.jmc:37:11
+Expected operator or 'matches' (got Keyword) at line 37 col 11.
+36 |    $data modify storage minecraft:__variable__ item_data.rarity set value $(rarity);
+37 |    $data modify storage minecraft:__variable__ item_data.visible_item_name set value $(visible_item_name);
+              ^^^^^^
+38 |}
+2024-07-26 22:49:50,260 | jmc.compile.lexer | INFO | Parsing file: /home/duda/Code/jmc/unlocker/src/setup.jmc
+2024-07-26 22:49:50,263 | jmc.compile.lexer | INFO | Parsing file: /home/duda/Code/jmc/unlocker/src/custom_item.jmc
+2024-07-26 22:49:50,271 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/custom_item.jmc:2:32
+Expected operator or 'matches' (got RoundParentheses) at line 2 col 32.
+1 |function give_self_item() {
+2 |    $__expand_enum_to_item_data({"item": $(item), "count": $(count)});
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3 |    __give_self_item() with storage minecraft:__variable__ item_data;
+2024-07-26 22:49:50,277 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/custom_item.jmc:9:17
+Expected operator or 'matches' (got Keyword) at line 9 col 17.
+8  |function __expand_enum_to_item_data() {
+9  |    $scoreboard players set $storage_item_data_model_data __variable__ $(item);
+                    ^^^^^^^
+10 |    $scoreboard players set $storage_item_data_count __variable__ $(count);
+2024-07-26 22:49:50,278 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/custom_item.jmc:10:17
+Expected operator or 'matches' (got Keyword) at line 10 col 17.
+9  |    $scoreboard players set $storage_item_data_model_data __variable__ $(item);
+10 |    $scoreboard players set $storage_item_data_count __variable__ $(count);
+                    ^^^^^^^
+11 |    $storage_item_data_max_stack = 64;
+2024-07-26 22:49:50,295 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/custom_item.jmc:45:11
+Expected operator or 'matches' (got Keyword) at line 45 col 11.
+44 |function __give_self_item() {
+45 |    $give @s 
+              ^^
+46 |    enchanted_book[max_stack_size=$(max_stack),
+2024-07-26 22:49:50,296 | jmc.compile.lexer | INFO | Parsing file: /home/duda/Code/jmc/unlocker/src/swap_items.jmc
+2024-07-26 22:49:50,299 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/swap_items.jmc:2:14
+Expected operator or 'matches' (got Keyword) at line 2 col 14.
+1 |function swap_item() {
+2 |    $execute store result score $storage_count_value __variable__ run clear @s minecraft:enchanted_book[minecraft:custom_model_data=$(item)];
+                ^^^^^
+3 |    __expand_enum_to_item_data({"item": $(item), "count": });
+2024-07-26 22:49:50,302 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/swap_items.jmc:21:11
+Expected operator or 'matches' (got Keyword) at line 21 col 11.
+20 |function __give_x_items() {
+21 |    $give @s $(item) $(value);
+              ^^
+22 |}
+2024-07-26 22:49:50,303 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/main.jmc:10:17
+Expected operator or 'matches' (got Keyword) at line 10 col 17.
+9  |function __set_wb_distance() {
+10 |    $scoreboard players set $wb_distance __variable__ $(distance);
+                    ^^^^^^^
+11 |    __update_dyn_variables();
+2024-07-26 22:49:50,305 | jmc.compile.exception | WARNING | JMCSyntaxException
+In src/main.jmc:21:18
+Expected operator or 'matches' (got Keyword) at line 21 col 18.
+20 |function __update_wb() {
+21 |    $worldborder set $(distance) 2;
+                     ^^^
+22 |}
+2024-07-26 22:49:50,312 | jmc.compile.compiling | INFO | Datapack :DataPack(
+    PRIVATE_NAME = __private__,
+    LOAD_NAME = __load__,
+    TICK_NAME = __tick__,
+    VAR_NAME = __variable__,
+    INT_NAME = __int__
+
+    objectives = {
+    "__variable__": "dummy"
+}
+    ints = {2}
+    functions = {
+    "__load__": [
+        "function community_unlocker:__setup_scoreboards",
+        "function community_unlocker:__setup_dyn_variables",
+        "function community_unlocker:__setup_gamerules",
+        "worldborder center 0 0",
+        "function community_unlocker:__set_wb_distance {\"distance\":\"10\"}",
+        "give @a enchanted_book{CustomModelData:421,MaxStackSize:64,Rarity:'common',display:{Name:'\"Cooked Cod\"',Lore:['\"DUMMY\"']}} 10"
+    ],
+    "__setup_dyn_variables": [
+        "data modify storage minecraft:__variable__ wb set value {\"distance\":10}",
+        "data modify storage minecraft:__variable__ count set value {\"value\":0,\"item\":\"\"}",
+        "data modify storage minecraft:__variable__ item_data set value {\"max_stack\":0,\"item_name\":\"\",\"rarity\":\"\",\"count\":0,\"model_data\":0,\"visible_item_name\":\"\",}",
+        "function community_unlocker:__update_dyn_variables"
+    ],
+    "__update_dyn_variables": [
+        "execute store result storage minecraft:__variable__ wb.distance int 1 run scoreboard players get $wb_distance __variable__"
+    ],
+    "__create_count_storage": [
+        "execute store result storage minecraft:__variable__ count.value int 1 run scoreboard players get $storage_count_value __variable__",
+        "$data modify storage minecraft:__variable__ count.item set value $(item)"
+    ],
+    "__clean_count_storage": [
+        "data modify storage minecraft:__variable__ count.item set value \"\"",
+        "data modify storage minecraft:__variable__ count.value set value 0"
+    ],
+    "__create_item_data_storage": [
+        "execute store result storage minecraft:__variable__ item_data.max_stack int 1 run scoreboard players get $storage_item_data_max_stack __variable__",
+        "execute store result storage minecraft:__variable__ item_data.count int 1 run scoreboard players get $storage_item_data_count __variable__",
+        "execute store result storage minecraft:__variable__ item_data.model_data int 1 run scoreboard players get $storage_item_data_model_data __variable__",
+        "$data modify storage minecraft:__variable__ item_data.item_name set value $(item_name)",
+        "$data modify storage minecraft:__variable__ item_data.rarity set value $(rarity)",
+        "$data modify storage minecraft:__variable__ item_data.visible_item_name set value $(visible_item_name)"
+    ],
+    "__clean_item_data_storage": [
+        "data modify storage minecraft:__variable__ item_data.item_name set value \"\"",
+        "data modify storage minecraft:__variable__ item_data.rarity set value \"\"",
+        "data modify storage minecraft:__variable__ item_data.count set value 0",
+        "data modify storage minecraft:__variable__ item_data.max_stack set value 0",
+        "data modify storage minecraft:__variable__ item_data.model_data set value 0"
+    ],
+    "__setup_scoreboards": [
+        "scoreboard players set $carrot_enabled __variable__ 0",
+        "scoreboard players set $potatoes_enabled __variable__ 0",
+        "scoreboard players set $wheat_enabled __variable__ 0",
+        "scoreboard players set $cooked_fish_enabled __variable__ 0",
+        "scoreboard players set $iron_enabled __variable__ 0",
+        "scoreboard players set $wb_distance __variable__ 20"
+    ],
+    "__setup_gamerules": [
+        "gamerule doLimitedCrafting true",
+        "gamerule reducedDebugInfo true"
+    ],
+    "give_self_item": [
+        "$function community_unlocker:__expand_enum_to_item_data {\"item\":$(item),\"count\":$(count)}",
+        "function community_unlocker:__give_self_item with storage minecraft:__variable__ item_data",
+        "function community_unlocker:__clean_item_data_storage"
+    ],
+    "__expand_enum_to_item_data": [
+        "$scoreboard players set $storage_item_data_model_data __variable__ $(item)",
+        "$scoreboard players set $storage_item_data_count __variable__ $(count)",
+        "scoreboard players set $storage_item_data_max_stack __variable__ 64",
+        "execute store result storage community_unlocker:__storage__ switch_key int 1 run scoreboard players get $storage_item_data_model_data __variable__",
+        "function community_unlocker:__private__/switch_case/0/select with storage community_unlocker:__storage__"
+    ],
+    "__give_self_item": [
+        "$give @s enchanted_book[max_stack_size=$(max_stack),item_name='\"$(visible_item_name)\"',lore=['\"Dummy item, ni huja dziala. Odblokuj\"'],rarity=\"$(rarity)\",custom_model_data=$(model_data)] $(count)"
+    ],
+    "swap_item": [
+        "$execute store result score $storage_count_value __variable__ run clear @s minecraft:enchanted_book[minecraft:custom_model_data=$(item)]",
+        "function community_unlocker:__expand_enum_to_item_data {\"item\":$(item),\"count\":}"
+    ],
+    "swap_iron": [
+        "execute store result score $storage_count_value __variable__ run clear @s minecraft:enchanted_book[minecraft:custom_model_data=6969]",
+        "function community_unlocker:__create_count_storage {\"item\":\"iron_ingot\"}",
+        "function community_unlocker:__give_x_items with storage minecraft:__variable__ storage_count",
+        "function community_unlocker:__clean_count_storage"
+    ],
+    "swap_cooked_cod": [
+        "execute store result score $storage_count_value __variable__ run clear @s minecraft:enchanted_book[minecraft:custom_model_data=421]",
+        "function community_unlocker:__create_count_storage {\"item\":\"cooked_cod\"}",
+        "function community_unlocker:__give_x_items with storage minecraft:__variable__ count",
+        "function community_unlocker:__clean_count_storage"
+    ],
+    "__give_x_items": [
+        "$give @s $(item) $(value)"
+    ],
+    "__set_wb_distance": [
+        "$scoreboard players set $wb_distance __variable__ $(distance)",
+        "function community_unlocker:__update_dyn_variables",
+        "function community_unlocker:__update_wb with storage minecraft:__variable__ wb"
+    ],
+    "__update_wb_distance": [
+        "function community_unlocker:__update_dyn_variables",
+        "function community_unlocker:__update_wb with storage minecraft:__variable__ wb"
+    ],
+    "__update_wb": [
+        "$worldborder set $(distance) 2"
+    ],
+    "upgrade_wb": [
+        "scoreboard players operation $wb_distance __variable__ *= 2 __int__",
+        "function community_unlocker:__update_wb_distance"
+    ],
+    "__tick__": [
+        "function community_unlocker:__manage_fish"
+    ],
+    "__manage_fish": [
+        "scoreboard players set __if_else__ __variable__ 0",
+        "execute if score $cooked_fish_enabled __variable__ matches 1.. run function community_unlocker:__private__/if_else/0",
+        "execute if score __if_else__ __variable__ matches 0 run recipe take @a minecraft:cooked_cod"
+    ]
+}
+    jsons = {
+    "loot_tables/override_vanilla/blocks/carrots": {
+        "type": "minecraft:block",
+        "pools": [
+            {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:carrot"
+                    }
+                ]
+            },
+            {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:carrot",
+                        "functions": [
+                            {
+                                "function": "minecraft:apply_bonus",
+                                "enchantment": "minecraft:fortune",
+                                "formula": "minecraft:binomial_with_bonus_count",
+                                "parameters": {
+                                    "extra": 3,
+                                    "probability": 0.5714286
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "condition": "minecraft:all_of",
+                        "terms": [
+                            {
+                                "condition": "minecraft:block_state_property",
+                                "block": "minecraft:carrots",
+                                "properties": {
+                                    "age": "7"
+                                }
+                            },
+                            {
+                                "condition": "minecraft:value_check",
+                                "value": {
+                                    "type": "minecraft:score",
+                                    "target": {
+                                        "type": "minecraft:fixed",
+                                        "name": "$carrot_enabled"
+                                    },
+                                    "score": "__variable__"
+                                },
+                                "range": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "functions": [
+            {
+                "function": "minecraft:explosion_decay"
+            }
+        ],
+        "random_sequence": "minecraft:blocks/carrots"
+    },
+    "loot_tables/override_vanilla/blocks/potatoes": {
+        "type": "minecraft:block",
+        "pools": [
+            {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:potato"
+                    }
+                ]
+            },
+            {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:potato",
+                        "functions": [
+                            {
+                                "function": "minecraft:apply_bonus",
+                                "enchantment": "minecraft:fortune",
+                                "formula": "minecraft:binomial_with_bonus_count",
+                                "parameters": {
+                                    "extra": 3,
+                                    "probability": 0.5714286
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "condition": "minecraft:all_of",
+                        "terms": [
+                            {
+                                "condition": "minecraft:block_state_property",
+                                "block": "minecraft:potatoes",
+                                "properties": {
+                                    "age": "7"
+                                }
+                            },
+                            {
+                                "condition": "minecraft:value_check",
+                                "value": {
+                                    "type": "minecraft:score",
+                                    "target": {
+                                        "type": "minecraft:fixed",
+                                        "name": "$potatoes_enabled"
+                                    },
+                                    "score": "__variables__"
+                                },
+                                "range": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:poisonous_potato",
+                        "conditions": [
+                            {
+                                "condition": "minecraft:random_chance",
+                                "chance": 0.02
+                            }
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "condition": "minecraft:block_state_property",
+                        "block": "minecraft:potatoes",
+                        "properties": {
+                            "age": "7"
+                        }
+                    }
+                ]
+            }
+        ],
+        "functions": [
+            {
+                "function": "minecraft:explosion_decay"
+            }
+        ],
+        "random_sequence": "minecraft:blocks/potatoes"
+    },
+    "loot_tables/override_vanilla/blocks/wheat": {
+        "type": "minecraft:block",
+        "pools": [
+            {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                    {
+                        "type": "minecraft:alternatives",
+                        "children": [
+                            {
+                                "type": "minecraft:item",
+                                "name": "minecraft:wheat",
+                                "conditions": [
+                                    {
+                                        "condition": "minecraft:block_state_property",
+                                        "block": "minecraft:wheat",
+                                        "properties": {
+                                            "age": "7"
+                                        }
+                                    },
+                                    {
+                                        "condition": "minecraft:value_check",
+                                        "value": {
+                                            "type": "minecraft:score",
+                                            "target": {
+                                                "type": "minecraft:fixed",
+                                                "name": "$wheat_enabled"
+                                            },
+                                            "score": "__variables__"
+                                        },
+                                        "range": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "minecraft:item",
+                                "name": "minecraft:wheat_seeds"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "rolls": 1,
+                "bonus_rolls": 0,
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": "minecraft:wheat_seeds",
+                        "functions": [
+                            {
+                                "function": "minecraft:apply_bonus",
+                                "enchantment": "minecraft:fortune",
+                                "formula": "minecraft:binomial_with_bonus_count",
+                                "parameters": {
+                                    "extra": 3,
+                                    "probability": 0.5714286
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "conditions": [
+                    {
+                        "condition": "minecraft:block_state_property",
+                        "block": "minecraft:wheat",
+                        "properties": {
+                            "age": "7"
+                        }
+                    },
+                    {
+                        "condition": "minecraft:value_check",
+                        "value": {
+                            "type": "minecraft:score",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "$wheat_enabled"
+                            },
+                            "score": "__variables__"
+                        },
+                        "range": 1
+                    }
+                ]
+            }
+        ],
+        "functions": [
+            {
+                "function": "minecraft:explosion_decay"
+            }
+        ],
+        "random_sequence": "minecraft:blocks/wheat"
+    }
+}
+    private_functions = {
+    "switch_case": {
+        "0/421": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"cooked_cod\",\"rarity\":\"common\",\"visible_item_name\":\"Cooked Cod\"}"
+        ],
+        "0/422": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"cooked_salmon\",\"rarity\":\"common\",\"visible_item_name\":\"Cooked Salmon\"}"
+        ],
+        "0/423": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"pumpkin_pie\",\"rarity\":\"common\",\"visible_item_name\":\"Pumpkin Pie\"}"
+        ],
+        "0/424": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"wheat\",\"rarity\":\"common\",\"visible_item_name\":\"Wheat\"}"
+        ],
+        "0/425": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"potato\",\"rarity\":\"common\",\"visible_item_name\":\"Potato\"}"
+        ],
+        "0/426": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"cooked_porkchop\",\"rarity\":\"common\",\"visible_item_name\":\"Cooked Porkchop\"}"
+        ],
+        "0/427": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"cooked_mutton\",\"rarity\":\"common\",\"visible_item_name\":\"Cooked Mutton\"}"
+        ],
+        "0/428": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"cooked_chicken\",\"rarity\":\"common\",\"visible_item_name\":\"Cooked Chicken\"}"
+        ],
+        "0/429": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"cooked_rabbit\",\"rarity\":\"common\",\"visible_item_name\":\"Cooked Rabbit\"}"
+        ],
+        "0/430": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"steak\",\"rarity\":\"common\",\"visible_item_name\":\"Steak\"}"
+        ],
+        "0/431": [
+            "scoreboard players set $storage_item_data_max_stack __variable__ 1",
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"suspicious_stew\",\"rarity\":\"common\",\"visible_item_name\":\"Suspicious Stew\"}"
+        ],
+        "0/432": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"golden_carrot\",\"rarity\":\"common\",\"visible_item_name\":\"Golden Carrot\"}"
+        ],
+        "0/433": [
+            "function community_unlocker:__create_item_data_storage {\"item_name\":\"golden_apple\",\"rarity\":\"rare\",\"visible_item_name\":\"Golden Apple\"}"
+        ],
+        "0/select": [
+            "$function community_unlocker:__private__/switch_case/0/$(switch_key)"
+        ]
+    },
+    "if_else": {
+        "0": [
+            "recipe give @a minecraft:cooked_cod",
+            "scoreboard players set __if_else__ __variable__ 1"
+        ]
+    }
+}
+    loads = []
+    tick = []
+)
+2024-07-26 22:49:52,834 | jmc.terminal.utils | INFO | Input from user: help
+2024-07-26 22:50:08,818 | jmc.terminal.utils | INFO | Input from user: version
+2024-07-26 22:50:23,306 | jmc.terminal.utils | INFO | Input from user: log info
+2024-07-26 22:50:23,306 | jmc.terminal_commands | INFO | Requesting info log

@@ -1,0 +1,18 @@
+#enum MODEL 421 COOKED_COD COOKED_SALMON PUMPKIN_PIE WHEAT POTATO COOKED_PORKCHOP COOKED_MUTTON COOKED_CHICKEN COOKED_RABBIT STEAK SUS_STEW GOLDEN_CARROT GOLDEN_APPLE
+#define save_to_storage(path) execute store result storage minecraft:__variable__ path int 1 run score.get()
+#define STORE_RESULT execute store result storage minecraft:__variable__
+#define SCORE int 1 run
+
+// cooked cod       -> 421
+// cooked salmon    -> 422
+// pumpkin pie      -> 423
+// wheat            -> 424
+// potatoe          -> 425
+// cooked porkchop  -> 426
+// cooked mutton    -> 427
+// cooked chicken   -> 428
+// cooked rabbit    -> 429
+// steak            -> 430
+// sus stew         -> 431
+// golden carrot    -> 432
+// golden apple     -> 433

@@ -1,0 +1,1 @@
+$worldborder set $(distance) 2

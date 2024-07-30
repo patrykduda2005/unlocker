@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/enchanted_book"
+  },
+  "overrides": [
+    { "predicate": { "custom_model_data": 421 }, "model": "minecraft:item/cooked_cod" },
+    { "predicate": { "custom_model_data": 422 }, "model": "minecraft:item/cooked_salmon" },
+    { "predicate": { "custom_model_data": 423 }, "model": "minecraft:item/pumpkin_pie" },
+    { "predicate": { "custom_model_data": 424 }, "model": "minecraft:item/wheat" },
+    { "predicate": { "custom_model_data": 425 }, "model": "minecraft:item/potato" },
+    { "predicate": { "custom_model_data": 426 }, "model": "minecraft:item/cooked_porkchop" },
+    { "predicate": { "custom_model_data": 427 }, "model": "minecraft:item/cooked_mutton" },
+    { "predicate": { "custom_model_data": 428 }, "model": "minecraft:item/cooked_chicken" },
+    { "predicate": { "custom_model_data": 429 }, "model": "minecraft:item/cooked_rabbit" },
+    { "predicate": { "custom_model_data": 430 }, "model": "minecraft:item/cooked_beef" },
+    { "predicate": { "custom_model_data": 431 }, "model": "minecraft:item/suspicious_stew" },
+    { "predicate": { "custom_model_data": 432 }, "model": "minecraft:item/golden_carrot" },
+    { "predicate": { "custom_model_data": 433 }, "model": "minecraft:item/golden_apple" }
+  ]
+}

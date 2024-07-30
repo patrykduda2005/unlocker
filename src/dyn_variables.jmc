@@ -1,0 +1,49 @@
+
+function __setup_dyn_variables() {
+    data modify storage minecraft:__variable__ wb set value {"distance":10};
+    data modify storage minecraft:__variable__ count set value {"value":0, "item":""};
+    data modify storage minecraft:__variable__ item_data set value {
+        "max_stack": 0,
+        "item_name": "",
+        "rarity": "",
+        "count": 0,
+        "model_data": 0,
+        "visible_item_name": "",
+    };
+    __update_dyn_variables();
+}
+
+function __update_dyn_variables() {
+    execute store result storage minecraft:__variable__ wb.distance int 1 run $wb_distance.get();
+}
+
+
+function __create_count_storage() {
+    execute store result storage minecraft:__variable__ count.value int 1 run $storage_count_value.get();
+    $data modify storage minecraft:__variable__ count.item set value $(item);
+}
+
+function __clean_count_storage() {
+    data modify storage minecraft:__variable__ count.item set value "";
+    data modify storage minecraft:__variable__ count.value set value 0;
+}
+
+function __create_item_data_storage() {
+    STORE_RESULT item_data.max_stack SCORE $storage_item_data_max_stack.get();
+    STORE_RESULT item_data.count SCORE $storage_item_data_count.get();
+    STORE_RESULT item_data.model_data SCORE $storage_item_data_model_data.get();
+    //minecraft:__variable__::item_data.model_data = $storage_item_data_model_data.get();
+    //$minecraft:__variable__::item_data.item_name = $(item_name);
+    $data modify storage minecraft:__variable__ item_data.item_name set value $(item_name);
+    $data modify storage minecraft:__variable__ item_data.rarity set value $(rarity);
+    $data modify storage minecraft:__variable__ item_data.visible_item_name set value $(visible_item_name);
+}
+
+function __clean_item_data_storage() {
+    data modify storage minecraft:__variable__ item_data.item_name set value "";
+    data modify storage minecraft:__variable__ item_data.rarity set value "";
+    data modify storage minecraft:__variable__ item_data.count set value 0;
+    data modify storage minecraft:__variable__ item_data.max_stack set value 0;
+    data modify storage minecraft:__variable__ item_data.model_data set value 0;
+
+}

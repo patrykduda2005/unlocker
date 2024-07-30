@@ -1,0 +1,7 @@
+{
+    "namespace": "community_unlocker",
+    "description": "Lock minecraft progression behind global achievments",
+    "pack_format": "48",
+    "target": "src/main.jmc",
+    "output": "community_unlocker"
+}

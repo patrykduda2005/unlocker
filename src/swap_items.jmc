@@ -1,0 +1,23 @@
+function swap_item() {
+    $execute store result score $storage_count_value __variable__ run clear @s minecraft:enchanted_book[minecraft:custom_model_data=$(item)];
+    __expand_enum_to_item_data({"item": $(item), "count": });
+}
+
+function swap_iron() {
+    $storage_count_value = clear @s minecraft:enchanted_book[minecraft:custom_model_data=6969];
+    __create_count_storage({"item": "iron_ingot"});
+    __give_x_items() with storage minecraft:__variable__ storage_count;
+    __clean_count_storage();
+}
+
+function swap_cooked_cod() {
+    $storage_count_value = clear @s minecraft:enchanted_book[minecraft:custom_model_data=421];
+    __create_count_storage({"item": "cooked_cod"});
+    __give_x_items() with storage minecraft:__variable__ count;
+    __clean_count_storage();
+}
+
+function __give_x_items() {
+    $give @s $(item) $(value);
+}
+

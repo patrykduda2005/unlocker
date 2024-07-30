@@ -1,0 +1,1 @@
+execute store result storage minecraft:__variable__ wb.distance int 1 run scoreboard players get $wb_distance __variable__

@@ -1,0 +1,1 @@
+function community_unlocker:__create_item_data_storage {"item_name":"cooked_cod","rarity":"common","visible_item_name":"Cooked Cod"}
