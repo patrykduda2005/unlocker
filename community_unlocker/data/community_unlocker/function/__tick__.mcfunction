@@ -1,2 +1,4 @@
 function community_unlocker:__private__/trigger_add/main
 function community_unlocker:swapping
+function community_unlocker:manage_nether
+function community_unlocker:weed

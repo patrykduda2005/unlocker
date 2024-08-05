@@ -1,0 +1,14 @@
+$nether_enabled = false;
+
+@add(__tick__)
+function manage_nether() {
+    if ($nether_enabled == 0) {
+        execute as @a at @s if block ~ ~ ~ minecraft:nether_portal expand {
+            Text.tellraw(
+                @s,
+                "&<red>NETHER KURWA WYLONCONY"
+            );
+            setblock ~ ~ ~ air;
+        }
+    }
+}

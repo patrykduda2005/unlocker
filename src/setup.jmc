@@ -11,7 +11,7 @@ function __setup_scoreboards() {
 }
 
 function __setup_gamerules() {
-    gamerule doLimitedCrafting true;
+    //gamerule doLimitedCrafting true;
     gamerule reducedDebugInfo true;
 }
 

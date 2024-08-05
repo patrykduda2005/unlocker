@@ -96,6 +96,14 @@ function tellraw() {
         @s,
         "&9Koszt upgrade'u: &7&<$wb_left_cost>"
     );
+    Text.tellraw(
+        @s,
+        "      &9Nether?"
+    );
+    Text.tellraw(
+        @s,
+        "         &a▓"
+    );
     tellraw @s "";
     tellraw @s "";
     tellraw @s "";

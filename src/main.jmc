@@ -1,4 +1,5 @@
 import "loot_tables";
+import "craftings";
 import "dyn_variables";
 import "setup";
 import "custom_item";
@@ -8,6 +9,8 @@ import "tiers";
 import "pay_up";
 import "ui";
 import "wb";
+import "nether";
+import "weed";
 
 
 
