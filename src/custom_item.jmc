@@ -1,55 +1,79 @@
-function give_self_item() {
-    $__expand_enum_to_item_data({"item": $(item), "count": $(count)});
-    __give_self_item() with storage minecraft:__variable__ item_data;
-    //__clean_item_data_storage();
-}
+class CustomItem {
+    function give_self_item() {
+        $this.__expand_enum_to_item_data({"item": $(item), "count": $(count)});
+        this.__give_self_item() with storage community_unlocker:community_unlocker item_data;
+        //__clean_item_data_storage();
+    }
 
 
-function __expand_enum_to_item_data() {
-    $scoreboard players set $storage_item_data_model_data __variable__ $(item);
-    $scoreboard players set $storage_item_data_count __variable__ $(count);
-    $storage_item_data_max_stack = 64;
-    switch ($storage_item_data_model_data) {
-        case MODEL.COOKED_COD:
-            __create_item_data_storage({"item_name": "cooked_cod", "rarity": "common", "visible_item_name": "Cooked Cod"});
-        case MODEL.COOKED_SALMON:
-            __create_item_data_storage({"item_name": "cooked_salmon", "rarity": "common", "visible_item_name": "Cooked Salmon"});
-        case MODEL.PUMPKIN_PIE:
-            __create_item_data_storage({"item_name": "pumpkin_pie", "rarity": "common", "visible_item_name": "Pumpkin Pie"});
-        case MODEL.WHEAT:
-            __create_item_data_storage({"item_name": "wheat", "rarity": "common", "visible_item_name": "Wheat"});
-        case MODEL.POTATO:
-            __create_item_data_storage({"item_name": "potato", "rarity": "common", "visible_item_name": "Potato"});
-        case MODEL.COOKED_PORKCHOP:
-            __create_item_data_storage({"item_name": "cooked_porkchop", "rarity": "common", "visible_item_name": "Cooked Porkchop"});
-        case MODEL.COOKED_MUTTON:
-            __create_item_data_storage({"item_name": "cooked_mutton", "rarity": "common", "visible_item_name": "Cooked Mutton"});
-        case MODEL.COOKED_CHICKEN:
-            __create_item_data_storage({"item_name": "cooked_chicken", "rarity": "common", "visible_item_name": "Cooked Chicken"});
-        case MODEL.COOKED_RABBIT:
-            __create_item_data_storage({"item_name": "cooked_rabbit", "rarity": "common", "visible_item_name": "Cooked Rabbit"});
-        case MODEL.STEAK:
-            __create_item_data_storage({"item_name": "steak", "rarity": "common", "visible_item_name": "Steak"});
-        case MODEL.SUS_STEW:
-            $storage_item_data_max_stack = 1;
-            __create_item_data_storage({"item_name": "suspicious_stew", "rarity": "common", "visible_item_name": "Suspicious Stew"});
-        case MODEL.GOLDEN_CARROT:
-            __create_item_data_storage({"item_name": "golden_carrot", "rarity": "common", "visible_item_name": "Golden Carrot"});
-        case MODEL.GOLDEN_APPLE:
-            __create_item_data_storage({"item_name": "golden_apple", "rarity": "rare", "visible_item_name": "Golden Apple"});
+    function __expand_enum_to_item_data() {
+        $scoreboard players set $storage_item_data_model_data __variable__ $(item);
+        $scoreboard players set $storage_item_data_count __variable__ $(count);
+        $storage_item_data_max_stack = 64;
+        switch ($storage_item_data_model_data) {
+            case MODEL.COOKED_COD:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Cooked Cod"});
+            case MODEL.COOKED_SALMON:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Cooked Salmon"});
+            case MODEL.PUMPKIN_PIE:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Pumpkin Pie"});
+            case MODEL.WHEAT:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Wheat"});
+            case MODEL.SEEDS:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Seeds"});
+            case MODEL.POTATO:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Potato"});
+            case MODEL.COOKED_PORKCHOP:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Cooked Porkchop"});
+            case MODEL.COOKED_MUTTON:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Cooked Mutton"});
+            case MODEL.COOKED_CHICKEN:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Cooked Chicken"});
+            case MODEL.COOKED_RABBIT:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Cooked Rabbit"});
+            case MODEL.STEAK:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Steak"});
+            case MODEL.SUS_STEW:
+                $storage_item_data_max_stack = 1;
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Suspicious Stew"});
+            case MODEL.GOLDEN_CARROT:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Golden Carrot"});
+            case MODEL.GOLDEN_APPLE:
+                __create_item_data_storage({ "rarity": "rare", "visible_item_name": "Golden Apple"});
+
+            case MODEL.RAW_IRON:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Raw Iron"});
+            case MODEL.IRON_INGOT:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Iron Ingot"});
+            case MODEL.REDSTONE:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Redstone"});
+            case MODEL.EMERALD:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Emerald"});
+            case MODEL.RAW_GOLD:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Raw Gold"});
+            case MODEL.GOLD_INGOT:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Gold Ingot"});
+            case MODEL.LAPIS_LAZULI:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Lapis"});
+            case MODEL.DIAMOND:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Diamond"});
+            case MODEL.NETHERITE_INGOT:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Netherite Ingot"});
+        }
+
+    }
+    
+
+    function __give_self_item() {
+        $give @s 
+        enchanted_book[max_stack_size=$(max_stack),
+        item_name='"$(visible_item_name)"',
+        lore=['"Dummy item, ni huja dziala. Odblokuj"'],
+        rarity="$(rarity)",
+        custom_model_data=$(model_data)] $(count);
     }
 
 }
-
-function __give_self_item() {
-    $give @s 
-    enchanted_book[max_stack_size=$(max_stack),
-    item_name='"$(visible_item_name)"',
-    lore=['"Dummy item, ni huja dziala. Odblokuj"'],
-    rarity="$(rarity)",
-    custom_model_data=$(model_data)] $(count);
-}
-
 // cooked cod       -> 421
 // cooked salmon    -> 422
 // pumpkin pie      -> 423

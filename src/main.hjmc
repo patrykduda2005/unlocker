@@ -1,4 +1,4 @@
-#enum MODEL 421 COOKED_COD COOKED_SALMON PUMPKIN_PIE WHEAT POTATO COOKED_PORKCHOP COOKED_MUTTON COOKED_CHICKEN COOKED_RABBIT STEAK SUS_STEW GOLDEN_CARROT GOLDEN_APPLE
+#enum MODEL 421 COOKED_COD COOKED_SALMON PUMPKIN_PIE WHEAT SEEDS POTATO COOKED_PORKCHOP COOKED_MUTTON COOKED_CHICKEN COOKED_RABBIT STEAK SUS_STEW GOLDEN_CARROT GOLDEN_APPLE RAW_IRON IRON_INGOT REDSTONE EMERALD RAW_GOLD GOLD_INGOT LAPIS_LAZULI DIAMOND NETHERITE_INGOT
 #define save_to_storage(path) execute store result storage minecraft:__variable__ path int 1 run score.get()
 #define STORE_RESULT execute store result storage minecraft:__variable__
 #define SCORE int 1 run
@@ -6,13 +6,32 @@
 // cooked cod       -> 421
 // cooked salmon    -> 422
 // pumpkin pie      -> 423
+
 // wheat            -> 424
-// potatoe          -> 425
-// cooked porkchop  -> 426
-// cooked mutton    -> 427
-// cooked chicken   -> 428
-// cooked rabbit    -> 429
-// steak            -> 430
-// sus stew         -> 431
-// golden carrot    -> 432
-// golden apple     -> 433
+// seeds            -> 425
+// potatoe          -> 426
+
+// cooked porkchop  -> 427
+// cooked mutton    -> 428
+// cooked chicken   -> 429
+// cooked rabbit    -> 430
+// steak            -> 431
+// sus stew         -> 432
+
+// golden carrot    -> 433
+// golden apple     -> 434
+
+
+// raw_iron          -> 435
+// iron_ingot        -> 436
+
+// redstone          -> 437
+// emerald           -> 438
+// raw_gold          -> 439
+// gold_ingot        -> 440
+
+// lapis_lazuli      -> 441
+
+// diamond           -> 442
+
+// netherite_ingot   -> 443

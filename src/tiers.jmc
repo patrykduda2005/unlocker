@@ -1,0 +1,133 @@
+$food_tier = 0;
+$mining_tier = 0;
+$wb_tier = 0;
+
+
+@lazy
+function food_tier() {
+    if ($food_tier >= 1) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="421");
+            ItemSwapper.swap_to_vanilla_item(item="422");
+            ItemSwapper.swap_to_vanilla_item(item="423");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="421");
+            ItemSwapper.swap_to_dummy_item(item="422");
+            ItemSwapper.swap_to_dummy_item(item="423");
+        }
+    }
+
+    if($food_tier >= 2) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="424");
+            ItemSwapper.swap_to_vanilla_item(item="425");
+            ItemSwapper.swap_to_vanilla_item(item="426");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="424");
+            ItemSwapper.swap_to_dummy_item(item="425");
+            ItemSwapper.swap_to_dummy_item(item="426");
+        }
+    }
+
+    if($food_tier >= 3) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="427");
+            ItemSwapper.swap_to_vanilla_item(item="428");
+            ItemSwapper.swap_to_vanilla_item(item="429");
+            ItemSwapper.swap_to_vanilla_item(item="430");
+            ItemSwapper.swap_to_vanilla_item(item="431");
+            ItemSwapper.swap_to_vanilla_item(item="432");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="427");
+            ItemSwapper.swap_to_dummy_item(item="428");
+            ItemSwapper.swap_to_dummy_item(item="429");
+            ItemSwapper.swap_to_dummy_item(item="430");
+            ItemSwapper.swap_to_dummy_item(item="431");
+            ItemSwapper.swap_to_dummy_item(item="432");
+        }
+    }
+
+    if($food_tier >= 3) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="432");
+            ItemSwapper.swap_to_vanilla_item(item="433");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="432");
+            ItemSwapper.swap_to_dummy_item(item="433");
+        }
+    }
+}
+
+@lazy
+function mining_tier() {
+    if ($mining_tier >= 1) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="435");
+            ItemSwapper.swap_to_vanilla_item(item="436");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="435");
+            ItemSwapper.swap_to_dummy_item(item="436");
+        }
+    }
+
+    if ($mining_tier >= 2) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="437");
+            ItemSwapper.swap_to_vanilla_item(item="438");
+            ItemSwapper.swap_to_vanilla_item(item="439");
+            ItemSwapper.swap_to_vanilla_item(item="440");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="437");
+            ItemSwapper.swap_to_dummy_item(item="438");
+            ItemSwapper.swap_to_dummy_item(item="439");
+            ItemSwapper.swap_to_dummy_item(item="440");
+        }
+    }
+
+    if ($mining_tier >= 3) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="441");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="441");
+        }
+    }
+
+    if ($mining_tier >= 4) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="442");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="442");
+        }
+    }
+
+    if ($mining_tier >= 4) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="443");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="443");
+        }
+    }
+}
+
+function swapping() {
+    food_tier();
+    mining_tier();
+}

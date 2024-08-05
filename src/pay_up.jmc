@@ -1,0 +1,22 @@
+@lazy
+function pay_food() {
+    if ($food_tier < 4)
+    $food_tier += 1;
+}
+
+@lazy
+function pay_mining() {
+    if ($mining_tier < 5)
+    $mining_tier += 1;
+}
+
+@lazy
+function pay_wb() {
+    $wb_sold = clear @s minecraft:cobblestone;
+    $wb_left_cost -= $wb_sold;
+    if ($wb_left_cost <= 0) {
+        $wb_cost_overflow = $wb_left_cost;
+        $wb_cost_overflow *= -1;
+        upgrade_wb();
+    }
+}

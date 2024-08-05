@@ -1,0 +1,104 @@
+Trigger.add(
+    upgrade,
+    () => {
+        tellraw();
+    }
+);
+
+Trigger.add(
+    pay_wb,
+    () => {
+        pay_wb();
+        tellraw();
+    }
+);
+
+Trigger.add(
+    pay_food,
+    () => {
+        pay_food();
+        tellraw();
+    }
+);
+
+Trigger.add(
+    pay_mining,
+    () => {
+        pay_mining();
+        tellraw();
+    }
+);
+
+TextProp.clickCommand(
+    "payfood",
+    () => {
+        trigger pay_food;
+    }
+);
+TextProp.clickCommand(
+    "paymining",
+    () => {
+        trigger pay_mining;
+    }
+);
+
+TextProp.clickCommand(
+    "paywb",
+    () => {
+        trigger pay_wb;
+    }
+);
+
+function tellraw() {
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    Text.tellraw(
+        @s,
+        "      &9Food tier     "
+    );
+    Text.tellraw(
+        @s,
+        "           &7&<$food_tier, payfood>&a&<payfood>↑         "
+    );
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    Text.tellraw(
+        @s,
+        "      &9Mining tier     "
+    );
+    Text.tellraw(
+       @s,
+       "             &7&<$mining_tier, paymining>&a&<paymining>↑         "
+    );
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    Text.tellraw(
+        @s,
+        "      &9World border     "
+    );
+    Text.tellraw(
+        @s,
+        "           &7&<$wb_distance>&a&<paywb>↑           "
+    );
+    Text.tellraw(
+        @s,
+        "&9Koszt upgrade'u: &7&<$wb_left_cost>"
+    );
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+    tellraw @s "";
+}
+

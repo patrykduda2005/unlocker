@@ -1,1 +1,1 @@
-function community_unlocker:__create_item_data_storage {"item_name":"steak","rarity":"common","visible_item_name":"Steak"}
+function community_unlocker:__create_item_data_storage {"rarity":"common","visible_item_name":"Cooked Rabbit"}

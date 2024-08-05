@@ -3,63 +3,17 @@ import "dyn_variables";
 import "setup";
 import "custom_item";
 import "swap_items";
+import "info";
+import "tiers";
+import "pay_up";
+import "ui";
+import "wb";
 
 
 
-function __set_wb_distance() {
-    $scoreboard players set $wb_distance __variable__ $(distance);
-    __update_dyn_variables();
-    __update_wb() with storage minecraft:__variable__ wb;
-}
-
-function __update_wb_distance() {
-    __update_dyn_variables();
-    __update_wb() with storage minecraft:__variable__ wb;
-}
-
-function __update_wb() {
-    $worldborder set $(distance) 2;
-}
-
-function upgrade_wb() {
-    $wb_distance *= 2;
-    __update_wb_distance();
-}
 
 
 
 function __tick__() {
-    __manage_fish();
+    swapping();
 }
-
-
-//Item.create(
-//    dummy_cooked_cod,
-//    enchanted_book@fix_nbt@,
-//    "",
-//    [""],
-//    nbt = {
-//        max_stack_size: 64,
-//        item_name:'"Cooked Cod"',
-//        lore: ['"Dummy item, ni huja dziala. Odblokuj"'],
-//        rarity: "common",
-//        custom_model_data: 421
-//    }
-//);
-//
-//Item.give(
-//    dummy_cooked_cod,
-//    @a,
-//    10
-//);
-
-//dummy, fuck
-function __manage_fish() {
-    if ($cooked_fish_enabled) {
-        recipe give @a minecraft:cooked_cod;
-    } else {
-        recipe take @a minecraft:cooked_cod;
-    }
-}
-
-

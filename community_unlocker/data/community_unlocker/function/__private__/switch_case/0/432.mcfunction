@@ -1,1 +1,2 @@
-function community_unlocker:__create_item_data_storage {"item_name":"golden_carrot","rarity":"common","visible_item_name":"Golden Carrot"}
+scoreboard players set $storage_item_data_max_stack __variable__ 1
+function community_unlocker:__create_item_data_storage {"rarity":"common","visible_item_name":"Suspicious Stew"}

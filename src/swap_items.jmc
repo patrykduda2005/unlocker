@@ -1,23 +1,76 @@
-function swap_item() {
-    $execute store result score $storage_count_value __variable__ run clear @s minecraft:enchanted_book[minecraft:custom_model_data=$(item)];
-    __expand_enum_to_item_data({"item": $(item), "count": });
-}
+class ItemSwapper {
+    function __id_to_item_name() {
+        switch ($storage_clearing_item) {
+            case MODEL.COOKED_COD:
+                ::clearing.item= "cooked_cod";
+            case MODEL.COOKED_SALMON:
+                ::clearing.item= "cooked_salmon";
+            case MODEL.PUMPKIN_PIE:
+                ::clearing.item= "pumpkin_pie";
+            case MODEL.WHEAT:
+                ::clearing.item= "wheat";
+            case MODEL.SEEDS:
+                ::clearing.item= "wheat_seeds";
+            case MODEL.POTATO:
+                ::clearing.item= "potato";
+            case MODEL.COOKED_PORKCHOP:
+                ::clearing.item= "cooked_porkchop";
+            case MODEL.COOKED_MUTTON:
+                ::clearing.item= "cooked_mutton";
+            case MODEL.COOKED_CHICKEN:
+                ::clearing.item= "cooked_chicken";
+            case MODEL.COOKED_RABBIT:
+                ::clearing.item= "cooked_rabbit";
+            case MODEL.STEAK:
+                ::clearing.item= "cooked_beef";
+            case MODEL.SUS_STEW:
+                ::clearing.item= "suspicious_stew";
+            case MODEL.GOLDEN_CARROT:
+                ::clearing.item = "golden_carrot";
+            case MODEL.GOLDEN_APPLE:
+                ::clearing.item = "golden_apple";
 
-function swap_iron() {
-    $storage_count_value = clear @s minecraft:enchanted_book[minecraft:custom_model_data=6969];
-    __create_count_storage({"item": "iron_ingot"});
-    __give_x_items() with storage minecraft:__variable__ storage_count;
-    __clean_count_storage();
-}
+            case MODEL.RAW_IRON:
+                ::clearing.item = "raw_iron";
+            case MODEL.IRON_INGOT:
+                ::clearing.item = "iron_ingot";
+            case MODEL.REDSTONE:
+                ::clearing.item = "redstone";
+            case MODEL.EMERALD:
+                ::clearing.item = "emerald";
+            case MODEL.RAW_GOLD:
+                ::clearing.item = "raw_gold";
+            case MODEL.GOLD_INGOT:
+                ::clearing.item = "gold_ingot";
+            case MODEL.LAPIS_LAZULI:
+                ::clearing.item = "lapis_lazuli";
+            case MODEL.DIAMOND:
+                ::clearing.item = "diamond";
+            case MODEL.NETHERITE_INGOT:
+                ::clearing.item = "netherite_ingot";
+        }
+    }
 
-function swap_cooked_cod() {
-    $storage_count_value = clear @s minecraft:enchanted_book[minecraft:custom_model_data=421];
-    __create_count_storage({"item": "cooked_cod"});
-    __give_x_items() with storage minecraft:__variable__ count;
-    __clean_count_storage();
-}
+    function swap_to_vanilla_item() {
+        $::clearing.count = clear @s minecraft:enchanted_book[minecraft:custom_model_data=$(item)];
+        $scoreboard players set $storage_clearing_item __variable__ $(item);
+        this.__id_to_item_name();
+        this.__give_x_items() with storage community_unlocker:community_unlocker clearing;
+    }
 
-function __give_x_items() {
-    $give @s $(item) $(value);
-}
+    function swap_to_dummy_item() {
+        $scoreboard players set $storage_clearing_item __variable__ $(item);
+        this.__id_to_item_name();
+        this.__clear_vanilla_item() with storage community_unlocker:community_unlocker clearing;
+        $::clearing.item = $(item);
+        CustomItem.give_self_item() with storage community_unlocker:community_unlocker clearing;
+    }
 
+    function __clear_vanilla_item() {
+        $::clearing.count = clear @s minecraft:$(item);
+    }
+
+    function __give_x_items() {
+        $give @s $(item) $(count);
+    }
+}

@@ -1,1 +1,1 @@
-function community_unlocker:__create_item_data_storage {"item_name":"cooked_porkchop","rarity":"common","visible_item_name":"Cooked Porkchop"}
+function community_unlocker:__create_item_data_storage {"rarity":"common","visible_item_name":"Potato"}

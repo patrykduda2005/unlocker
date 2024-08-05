@@ -1,1 +1,1 @@
-function community_unlocker:__create_item_data_storage {"item_name":"potato","rarity":"common","visible_item_name":"Potato"}
+function community_unlocker:__create_item_data_storage {"rarity":"common","visible_item_name":"Seeds"}

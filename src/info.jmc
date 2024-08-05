@@ -1,0 +1,6 @@
+function info() {
+    Text.tellraw(
+        @s,
+        ""
+    );
+}

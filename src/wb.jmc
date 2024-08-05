@@ -1,0 +1,31 @@
+function __set_wb_distance() {
+    $wb_left_cost = $wb_distance;
+    $wb_left_cost *= 10;
+    $scoreboard players set $wb_distance __variable__ $(distance);
+    __update_dyn_variables();
+    __update_wb() with storage minecraft:__variable__ wb;
+}
+
+@lazy
+function __update_wb_distance() {
+    __update_dyn_variables();
+    __update_wb() with storage minecraft:__variable__ wb;
+}
+
+function __update_wb() {
+    $worldborder set $(distance) 2;
+}
+
+
+function upgrade_wb() {
+    $wb_distance *= 2;
+    __update_wb_distance();
+    $wb_left_cost = $wb_distance;
+    $wb_left_cost *= 10;
+    $wb_left_cost -= $wb_cost_overflow;
+    if ($wb_left_cost < 0 ) {
+        $wb_cost_overflow = $wb_left_cost;
+        $wb_cost_overflow *= -1;
+        upgrade_wb();
+    }
+}

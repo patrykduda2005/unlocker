@@ -1,0 +1,1 @@
+$execute store result storage community_unlocker:community_unlocker clearing.count int 1 run clear @s minecraft:$(item)

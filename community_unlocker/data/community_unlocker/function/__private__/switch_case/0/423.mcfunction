@@ -1,1 +1,1 @@
-function community_unlocker:__create_item_data_storage {"item_name":"pumpkin_pie","rarity":"common","visible_item_name":"Pumpkin Pie"}
+function community_unlocker:__create_item_data_storage {"rarity":"common","visible_item_name":"Pumpkin Pie"}

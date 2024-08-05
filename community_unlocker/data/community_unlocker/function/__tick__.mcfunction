@@ -1,1 +1,2 @@
-function community_unlocker:__manage_fish
+function community_unlocker:__private__/trigger_add/main
+function community_unlocker:swapping

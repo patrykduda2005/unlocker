@@ -1,0 +1,2 @@
+execute store result storage community_unlocker:__storage__ switch_key int 1 run scoreboard players get $storage_clearing_item __variable__
+function community_unlocker:__private__/switch_case/1/select with storage community_unlocker:__storage__

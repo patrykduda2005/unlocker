@@ -1,0 +1,2 @@
+$function community_unlocker:customitem/__expand_enum_to_item_data {"item":$(item),"count":$(count)}
+function community_unlocker:customitem/__give_self_item with storage community_unlocker:community_unlocker item_data
