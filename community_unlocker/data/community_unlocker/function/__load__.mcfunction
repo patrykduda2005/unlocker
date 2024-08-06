@@ -16,4 +16,6 @@ function community_unlocker:__set_wb_distance {"distance":"10"}
 scoreboard players set $food_tier __variable__ 0
 scoreboard players set $mining_tier __variable__ 0
 scoreboard players set $wb_tier __variable__ 0
+scoreboard players set $rotten_flesh_left_cost __variable__ 256
+scoreboard players set $spider_eye_left_cost __variable__ 32
 scoreboard players set $nether_enabled __variable__ 0

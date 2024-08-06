@@ -1,13 +1,52 @@
 @lazy
-function pay_food() {
-    if ($food_tier < 4)
+function upgrade_food() {
     $food_tier += 1;
 }
 
 @lazy
-function pay_mining() {
-    if ($mining_tier < 5)
+function upgrade_mining() {
     $mining_tier += 1;
+}
+
+$rotten_flesh_left_cost = 256;
+$spider_eye_left_cost = 32;
+
+@lazy
+function return_overflow() {
+
+}
+
+@lazy
+function pay_item(leitem) {
+    $$leitem_sold = clear @s minecraft:$leitem;
+    $$leitem_left_cost -= $$leitem_sold;
+    if ($$leitem_left_cost <= 0) {
+        $$leitem_cost_overflow = $$leitem_left_cost;
+        $$leitem_cost_overflow *= -1;
+    }
+    execute if score $$leitem_cost_overflow __variable__ matches 1.. run {
+        return_overflow();
+    }
+}
+
+@lazy
+function figure_out_food_cost() {
+    execute as @s if score $food_tier __variable__ matches 0 run {
+        say "hi";
+        pay_item(rotten_flesh);
+        pay_item(spider_eye);
+        if ($rotten_flesh_left_cost <= 0 && $spider_eye_left_cost <= 0) upgrade_food();
+    }
+}
+
+function pay_food() {
+    if ($food_tier > 3) return;
+    figure_out_food_cost();
+
+}
+
+function pay_mining() {
+    if ($mining_tier > 4) return;
 }
 
 @lazy

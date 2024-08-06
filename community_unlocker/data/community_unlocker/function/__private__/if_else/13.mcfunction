@@ -1,0 +1,2 @@
+execute as @a at @s if block ~ ~ ~ minecraft:nether_portal run tellraw @s {"text":"NETHER KURWA WYLONCONY","color":"red","type":"text"}
+execute as @a at @s if block ~ ~ ~ minecraft:nether_portal run setblock ~ ~ ~ air

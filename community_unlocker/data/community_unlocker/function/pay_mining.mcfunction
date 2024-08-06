@@ -1,0 +1,1 @@
+execute if score $mining_tier __variable__ matches 5.. run return 0

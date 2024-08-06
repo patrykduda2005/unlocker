@@ -4,4 +4,4 @@ function community_unlocker:__update_wb with storage minecraft:__variable__ wb
 scoreboard players operation $wb_left_cost __variable__ = $wb_distance __variable__
 scoreboard players operation $wb_left_cost __variable__ *= 10 __int__
 scoreboard players operation $wb_left_cost __variable__ -= $wb_cost_overflow __variable__
-execute if score $wb_left_cost __variable__ matches ..-1 run function community_unlocker:__private__/if_else/10
+execute if score $wb_left_cost __variable__ matches ..-1 run function community_unlocker:__private__/if_else/12
