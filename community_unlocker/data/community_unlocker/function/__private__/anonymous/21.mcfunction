@@ -1,2 +1,2 @@
-execute if entity @s at @s if score $cobweb_left_cost __variable__ matches 1.. run function community_unlocker:__private__/anonymous/20
-execute if score $cobweb_left_cost __variable__ matches ..0 run scoreboard players add $food_tier __variable__ 1
+execute if entity @s at @s if score $cake_left_cost __variable__ matches 1.. run function community_unlocker:__private__/anonymous/20
+execute if score $cake_left_cost __variable__ matches ..0 run scoreboard players add $food_tier __variable__ 1

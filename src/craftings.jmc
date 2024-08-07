@@ -22,11 +22,13 @@ new recipe(knockback_stick)
     "components": {
       "minecraft:enchantments": {
         "levels": {
-          "minecraft:knockback": 5
+          "minecraft:knockback": 5,
+          "minecraft:wind_burst": 1
         }
       },
       "minecraft:item_name": "[{'text':'Knockback Stick', 'color':'blue'}]"
     }
   }
 }
+
 

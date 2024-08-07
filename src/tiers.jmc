@@ -1,22 +1,27 @@
+// wheat            -> 424
+// seeds            -> 425
+// potatoe          -> 426
+
+// cooked cod       -> 421
+// pumpkin pie      -> 423
+
+
+// cooked salmon    -> 422
+// cooked porkchop  -> 427
+// cooked mutton    -> 428
+// cooked chicken   -> 429
+// cooked rabbit    -> 430
+// steak            -> 431
+// sus stew         -> 432
+
+// golden carrot    -> 433
+// golden apple     -> 434
+
 
 
 @lazy
 function food_tier() {
-    if ($food_tier >= 1) {
-        execute as @a run {
-            ItemSwapper.swap_to_vanilla_item(item="421");
-            ItemSwapper.swap_to_vanilla_item(item="422");
-            ItemSwapper.swap_to_vanilla_item(item="423");
-        }
-    } else {
-        execute as @a run {
-            ItemSwapper.swap_to_dummy_item(item="421");
-            ItemSwapper.swap_to_dummy_item(item="422");
-            ItemSwapper.swap_to_dummy_item(item="423");
-        }
-    }
-
-    if($food_tier >= 2) {
+    if($food_tier >= 1) {
         execute as @a run {
             ItemSwapper.swap_to_vanilla_item(item="424");
             ItemSwapper.swap_to_vanilla_item(item="425");
@@ -30,8 +35,21 @@ function food_tier() {
         }
     }
 
+    if ($food_tier >= 2) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="421");
+            ItemSwapper.swap_to_vanilla_item(item="423");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="421");
+            ItemSwapper.swap_to_dummy_item(item="423");
+        }
+    }
+
     if($food_tier >= 3) {
         execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="422");
             ItemSwapper.swap_to_vanilla_item(item="427");
             ItemSwapper.swap_to_vanilla_item(item="428");
             ItemSwapper.swap_to_vanilla_item(item="429");
@@ -41,6 +59,7 @@ function food_tier() {
         }
     } else {
         execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="422");
             ItemSwapper.swap_to_dummy_item(item="427");
             ItemSwapper.swap_to_dummy_item(item="428");
             ItemSwapper.swap_to_dummy_item(item="429");
@@ -63,6 +82,20 @@ function food_tier() {
     }
 }
 
+// raw_iron          -> 435
+// iron_ingot        -> 436
+
+// redstone          -> 437
+// raw_gold          -> 439
+// gold_ingot        -> 440
+
+// diamond           -> 442
+
+// emerald           -> 438
+// lapis_lazuli      -> 441
+
+
+// netherite_ingot   -> 443
 @lazy
 function mining_tier() {
     if ($mining_tier >= 1) {
@@ -80,30 +113,19 @@ function mining_tier() {
     if ($mining_tier >= 2) {
         execute as @a run {
             ItemSwapper.swap_to_vanilla_item(item="437");
-            ItemSwapper.swap_to_vanilla_item(item="438");
             ItemSwapper.swap_to_vanilla_item(item="439");
             ItemSwapper.swap_to_vanilla_item(item="440");
         }
     } else {
         execute as @a run {
             ItemSwapper.swap_to_dummy_item(item="437");
-            ItemSwapper.swap_to_dummy_item(item="438");
             ItemSwapper.swap_to_dummy_item(item="439");
             ItemSwapper.swap_to_dummy_item(item="440");
         }
     }
 
-    if ($mining_tier >= 3) {
-        execute as @a run {
-            ItemSwapper.swap_to_vanilla_item(item="441");
-        }
-    } else {
-        execute as @a run {
-            ItemSwapper.swap_to_dummy_item(item="441");
-        }
-    }
 
-    if ($mining_tier >= 4) {
+    if ($mining_tier >= 3){
         execute as @a run {
             ItemSwapper.swap_to_vanilla_item(item="442");
         }
@@ -114,6 +136,18 @@ function mining_tier() {
     }
 
     if ($mining_tier >= 4) {
+        execute as @a run {
+            ItemSwapper.swap_to_vanilla_item(item="438");
+            ItemSwapper.swap_to_vanilla_item(item="441");
+        }
+    } else {
+        execute as @a run {
+            ItemSwapper.swap_to_dummy_item(item="438");
+            ItemSwapper.swap_to_dummy_item(item="441");
+        }
+    }
+
+    if ($mining_tier >= 5) {
         execute as @a run {
             ItemSwapper.swap_to_vanilla_item(item="443");
         }

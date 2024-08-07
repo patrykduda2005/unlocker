@@ -1,5 +1,3 @@
-data modify storage community_unlocker:community_unlocker pay_clearing.score set value 'tropical_fish_sold'
-data modify storage community_unlocker:community_unlocker pay_clearing.item set value 'tropical_fish'
-execute store result storage community_unlocker:community_unlocker pay_clearing.count int 1 run scoreboard players get $tropical_fish_left_cost __variable__
-function community_unlocker:clear_the_fricking_items with storage community_unlocker:community_unlocker pay_clearing
-scoreboard players operation $tropical_fish_left_cost __variable__ -= $tropical_fish_sold __variable__
+execute if entity @s at @s if score $rotten_flesh_left_cost __variable__ matches 1.. run function community_unlocker:__private__/anonymous/14
+execute if entity @s at @s if score $spider_eye_left_cost __variable__ matches 1.. run function community_unlocker:__private__/anonymous/15
+execute if score $rotten_flesh_left_cost __variable__ matches ..0 if score $spider_eye_left_cost __variable__ matches ..0 run scoreboard players add $food_tier __variable__ 1
