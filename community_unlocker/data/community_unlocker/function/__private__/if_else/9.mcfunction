@@ -1,2 +1,2 @@
-scoreboard players operation $rotten_flesh_cost_overflow __variable__ = $rotten_flesh_left_cost __variable__
-scoreboard players operation $rotten_flesh_cost_overflow __variable__ *= -1 __int__
+execute as @a run function community_unlocker:itemswapper/swap_to_vanilla_item {"item":"443"}
+scoreboard players set __if_else__ __variable__ 1

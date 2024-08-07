@@ -1,26 +1,123 @@
-
-//Enabled/disabled
-function __setup_scoreboards() {
-    $carrot_enabled = false;
-    $potatoes_enabled = false;
-    $wheat_enabled = false;
-    $cooked_fish_enabled = false;
-    $iron_enabled = false;
-
-    $wb_distance = 20;
+@lazy
+function __item_pay_scoreboards(leitem) {
+    $$leitem_left_cost = 0;
+    $$leitem_cost_overflow = 0;
+    $$leitem_sold = 0;
 }
+
+@lazy
+function pricing(leitem, price) {
+    $$leitem_left_cost = $price;
+}
+
+//JMC.python (pythonCode=`
+//    rzeczy = [
+//        "rotten_flesh",
+//        "spider_eye",
+//        "pufferfish",
+//        "tropical_fish",
+//        "cake",
+//        "cobweb",
+//        "cobbled_deepslate",
+//        "coal",
+//        "nautilus_shell",
+//        "nether_star",
+//        "piglin_head",
+//        "dragon_head",
+//        "dragon_egg",
+//        "gold_block",
+//    ]
+//def add_item(string) :
+//    hover = "TextProp.hoverItem("
+//    hover+= "\"" + string + "\","
+//    hover += "{ \"id\": \"minecraft:" + string + "\"})"
+//    return hover
+//output=""
+//for x in rzeczy:
+//    output += add_item(x)
+//emit(output)
+//`,
+//""
+//)
+//;
+
+
+@lazy
+function __setup_paying_scoreboards() {
+    Hardcode.repeatLists(
+        [ "leitem", "price" ],
+        () => {
+            __item_pay_scoreboards(leitem);
+            pricing(leitem, price);
+        },
+        [
+            [
+                "rotten_flesh",
+                "spider_eye",
+                "pufferfish",
+                "tropical_fish",
+                "cake",
+                "cobweb",
+                "cobbled_deepslate",
+                "coal",
+                "nautilus_shell",
+                "nether_star",
+                "piglin_head",
+                "dragon_head",
+                "dragon_egg",
+                "gold_block",
+                "wb"
+            ],
+            [
+                "256",
+                "32",
+                "96",
+                "25",
+                "128",
+                "128",
+                "512",
+                "128",
+                "10",
+                "1",
+                "1",
+                "1",
+                "1",
+                "64",
+                "100"
+            ]
+        ]
+    );
+}
+
 
 function __setup_gamerules() {
     //gamerule doLimitedCrafting true;
     gamerule reducedDebugInfo true;
 }
 
-__setup_scoreboards();
 __setup_dyn_variables();
 __setup_gamerules();
 
 
 
+function setup_once() {
+    if ($didrun != 1) {
+        $food_tier = 0;
+        $mining_tier = 0;
+        $wb_tier = 0;
+        __setup_paying_scoreboards();
+        __set_wb_distance(distance="10");
+        $didrun = 1;
+    }
+}
+setup_once();
+
+function reset_all() {
+    $food_tier = 0;
+    $mining_tier = 0;
+    $wb_tier = 0;
+    __setup_paying_scoreboards();
+    __set_wb_distance(distance="10");
+}
 
 worldborder center 0 0;
-__set_wb_distance(distance="10");

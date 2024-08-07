@@ -1,0 +1,3 @@
+execute if entity @s at @s if score $rotten_flesh_left_cost __variable__ matches 1.. run function community_unlocker:__private__/anonymous/12
+execute if entity @s at @s if score $spider_eye_left_cost __variable__ matches 1.. run function community_unlocker:__private__/anonymous/13
+execute if score $rotten_flesh_left_cost __variable__ matches ..0 if score $spider_eye_left_cost __variable__ matches ..0 run scoreboard players add $food_tier __variable__ 1

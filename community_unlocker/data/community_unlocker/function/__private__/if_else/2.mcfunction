@@ -1,2 +1,2 @@
-execute as @a run function community_unlocker:__private__/anonymous/4
+execute as @a run function community_unlocker:__private__/anonymous/2
 scoreboard players set __if_else__ __variable__ 1

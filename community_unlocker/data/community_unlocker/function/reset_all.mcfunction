@@ -62,4 +62,3 @@ scoreboard players set $wb_cost_overflow __variable__ 0
 scoreboard players set $wb_sold __variable__ 0
 scoreboard players set $wb_left_cost __variable__ 100
 function community_unlocker:__set_wb_distance {"distance":"10"}
-scoreboard players set $didrun __variable__ 1

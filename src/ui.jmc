@@ -22,6 +22,14 @@ Trigger.add(
 );
 
 Trigger.add(
+    pay_neth,
+    () => {
+        pay_neth();
+        tellraw();
+    }
+);
+
+Trigger.add(
     pay_mining,
     () => {
         pay_mining();
@@ -41,6 +49,12 @@ TextProp.clickCommand(
         trigger pay_mining;
     }
 );
+TextProp.clickCommand(
+    "payneth",
+    () => {
+        trigger pay_neth;
+    }
+);
 
 TextProp.clickCommand(
     "paywb",
@@ -49,19 +63,106 @@ TextProp.clickCommand(
     }
 );
 
+TextProp.hoverItem("rotten_flesh", {"id":"minecraft:rotten_flesh"});
+TextProp.hoverItem("spider_eye", {"id":"minecraft:spider_eye"});
+TextProp.hoverItem("pufferfish", {"id":"minecraft:pufferfish"});
+TextProp.hoverItem("tropical_fish", {"id":"minecraft:tropical_fish"});
+TextProp.hoverItem("cake", {"id":"minecraft:cake"});
+TextProp.hoverItem("cobweb", {"id":"minecraft:cobweb"});
+TextProp.hoverItem("cobbled_deepslate", {"id":"minecraft:cobbled_deepslate"});
+TextProp.hoverItem("coal", {"id":"minecraft:coal"});
+TextProp.hoverItem("nautilus_shell", {"id":"minecraft:nautilus_shell"});
+TextProp.hoverItem("nether_star", {"id":"minecraft:nether_star"});
+TextProp.hoverItem("piglin_head", {"id":"minecraft:piglin_head"});
+TextProp.hoverItem("dragon_head", {"id":"minecraft:dragon_head"});
+TextProp.hoverItem("dragon_egg", {"id":"minecraft:dragon_egg"});
+TextProp.hoverItem("gold_block", {"id":"minecraft:gold_block"});
+TextProp.hoverItem("cobblestone", {"id":"minecraft:cobblestone"});
+
+@lazy
+function food_cost() {
+    execute if score $food_tier __variable__ matches 0 expand {
+        Text.tellraw(
+            @s,
+            "&cRotten flesh left: &7&<$rotten_flesh_left_cost, rotten_flesh>"
+        );
+        Text.tellraw(
+            @s,
+            "&cSpider eye left: &7&<$spider_eye_left_cost, spider_eye>"
+        );
+    }
+    execute if score $food_tier __variable__ matches 1 expand {
+        Text.tellraw(
+            @s,
+            "&cPufferfish left: &7&<$pufferfish_left_cost, pufferfish>"
+        );
+        Text.tellraw(
+            @s,
+            "&cTropical fish left: &7&<$tropical_fish_left_cost, tropical_fish>"
+        );
+    }
+    execute if score $food_tier __variable__ matches 2 expand {
+        Text.tellraw(
+            @s,
+            "&cCake left: &7&<$cake_left_cost, cake>"
+        );
+    }
+    execute if score $food_tier __variable__ matches 3 expand {
+        Text.tellraw(
+            @s,
+            "&cCobweb left: &7&<$cobweb_left_cost, cobweb>"
+        );
+    }
+}
+
+@lazy
+function mining_cost() {
+    execute if score $mining_tier __variable__ matches 0 expand {
+        Text.tellraw(
+            @s,
+            "&cCobbled Deepslate left: &7&<$cobbled_deepslate_left_cost, cobbled_deepslate>"
+        );
+        Text.tellraw(
+            @s,
+            "&cCoal left: &7&<$coal_left_cost, coal>"
+        );
+    }
+    execute if score $mining_tier __variable__ matches 1 expand {
+        Text.tellraw(
+            @s,
+            "&cNautilus shell left: &7&<$nautilus_shell_left_cost, nautilus_shell>"
+        );
+    }
+    execute if score $mining_tier __variable__ matches 2 expand {
+        Text.tellraw(
+            @s,
+            "&cNether star left: &7&<$nether_star_left_cost, nether_star>"
+        );
+    }
+    execute if score $mining_tier __variable__ matches 3 expand {
+        Text.tellraw(
+            @s,
+            "&csth left: &7&<$nether_star_left_cost>"
+        );
+    }
+    execute if score $mining_tier __variable__ matches 4 expand {
+        Text.tellraw(
+            @s,
+            "&cPiglin head left: &7&<$piglin_head_left_cost, piglin_head>"
+        );
+        Text.tellraw(
+            @s,
+            "&cDragon head left: &7&<$dragon_head_left_cost, dragon_head>"
+        );
+        Text.tellraw(
+            @s,
+            "&cDragon egg left: &7&<$dragon_egg_left_cost, dragon_egg>"
+        );
+    }
+}
+
 function tellraw() {
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
+    tellraw @s "/---------------------------------------------------\\";
     Text.tellraw(
         @s,
         "      &9Food tier     "
@@ -70,9 +171,13 @@ function tellraw() {
         @s,
         "           &7&<$food_tier, payfood>&a&<payfood>↑         "
     );
+    food_cost();
     tellraw @s "";
     tellraw @s "";
-    tellraw @s "";
+
+
+
+
     Text.tellraw(
         @s,
         "      &9Mining tier     "
@@ -81,9 +186,13 @@ function tellraw() {
        @s,
        "             &7&<$mining_tier, paymining>&a&<paymining>↑         "
     );
+    mining_cost();
     tellraw @s "";
     tellraw @s "";
-    tellraw @s "";
+
+
+
+
     Text.tellraw(
         @s,
         "      &9World border     "
@@ -94,19 +203,34 @@ function tellraw() {
     );
     Text.tellraw(
         @s,
-        "&9Koszt upgrade'u: &7&<$wb_left_cost>"
+        "&cCobble left: &7&<$wb_left_cost, cobblestone>"
     );
+    tellraw @s "";
+    tellraw @s "";
+
+
+
+
+
     Text.tellraw(
         @s,
         "      &9Nether?"
     );
-    Text.tellraw(
-        @s,
-        "         &a▓"
-    );
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
-    tellraw @s "";
+    if ($nether_enabled == 0) {
+        Text.tellraw(
+            @s,
+            "         &7&<payneth>▓&a&<payneth>↑"
+        );
+        Text.tellraw(
+            @s,
+            "&cGold Blocks left: &7&<$gold_block_left_cost, gold_block>"
+        );
+    } else {
+        Text.tellraw(
+            @s,
+            "         &a▓"
+        );
+    }
+    //tellraw @s "\\---------------------------------------------------/";
 }
 

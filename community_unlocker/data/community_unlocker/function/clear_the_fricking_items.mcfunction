@@ -1,0 +1,1 @@
+$execute store result score $$(score) __variable__ run clear @s minecraft:$(item) $(count)

@@ -1,6 +1,3 @@
-$food_tier = 0;
-$mining_tier = 0;
-$wb_tier = 0;
 
 
 @lazy

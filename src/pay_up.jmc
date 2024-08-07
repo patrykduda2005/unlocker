@@ -8,54 +8,95 @@ function upgrade_mining() {
     $mining_tier += 1;
 }
 
-$rotten_flesh_left_cost = 256;
-$spider_eye_left_cost = 32;
-
-@lazy
-function return_overflow() {
-
+function clear_the_fricking_items() {
+    $execute store result score $$(score) __variable__ run clear @s minecraft:$(item) $(count);
 }
 
 @lazy
 function pay_item(leitem) {
-    $$leitem_sold = clear @s minecraft:$leitem;
-    $$leitem_left_cost -= $$leitem_sold;
-    if ($$leitem_left_cost <= 0) {
-        $$leitem_cost_overflow = $$leitem_left_cost;
-        $$leitem_cost_overflow *= -1;
-    }
-    execute if score $$leitem_cost_overflow __variable__ matches 1.. run {
-        return_overflow();
+    execute as @s at @s if score $$leitem_left_cost __variable__ matches 1.. run {
+        ::pay_clearing.score = "$leitem_sold";
+        ::pay_clearing.item = "$leitem";
+        ::pay_clearing.count = $$leitem_left_cost.get();
+        clear_the_fricking_items() with storage community_unlocker:community_unlocker pay_clearing;
+        $$leitem_left_cost -= $$leitem_sold;
     }
 }
 
 @lazy
 function figure_out_food_cost() {
     execute as @s if score $food_tier __variable__ matches 0 run {
-        say "hi";
         pay_item(rotten_flesh);
         pay_item(spider_eye);
         if ($rotten_flesh_left_cost <= 0 && $spider_eye_left_cost <= 0) upgrade_food();
+    }
+    execute as @s if score $food_tier __variable__ matches 1 run {
+        pay_item(pufferfish);
+        pay_item(tropical_fish);
+        if ($pufferfish_left_cost <= 0 && $tropical_fish_left_cost <= 0) upgrade_food();
+    }
+    execute as @s if score $food_tier __variable__ matches 2 run {
+        pay_item(cake);
+        if ($cake_left_cost <= 0) upgrade_food();
+    }
+    execute as @s if score $food_tier __variable__ matches 3 run {
+        pay_item(cobweb);
+        if ($cobweb_left_cost <= 0) upgrade_food();
+    }
+}
+
+@lazy
+function figure_out_mining_cost() {
+    execute as @s if score $mining_tier __variable__ matches 0 run {
+        pay_item(cobbled_deepslate);
+        pay_item(coal);
+        if ($cobbled_deepslate_left_cost <= 0 && $coal_left_cost <= 0) upgrade_mining();
+    }
+    execute as @s if score $mining_tier __variable__ matches 1 run {
+        pay_item(nautilus_shell);
+        if ($nautilus_shell_left_cost <= 0) upgrade_mining();
+    }
+    execute as @s if score $mining_tier __variable__ matches 2 run {
+        pay_item(nether_star);
+        if ($nether_star_left_cost <= 0) upgrade_mining();
+    }
+    execute as @s if score $mining_tier __variable__ matches 3 run {
+        pay_item(nether_star);
+        if ($nether_star_left_cost <= 0) upgrade_mining();
+    }
+    execute as @s if score $mining_tier __variable__ matches 4 run {
+        pay_item(piglin_head);
+        pay_item(dragon_head);
+        pay_item(dragon_egg);
+        if ($piglin_head_left_cost <= 0 && $dragon_head_left_cost <= 0 && $dragon_egg_left_cost) upgrade_mining();
     }
 }
 
 function pay_food() {
     if ($food_tier > 3) return;
     figure_out_food_cost();
-
 }
 
 function pay_mining() {
     if ($mining_tier > 4) return;
 }
 
+function pay_neth() {
+    execute if score $nether_enabled __variable__ matches 0 run {
+        pay_item(gold_block);
+        if ($gold_block_left_cost <= 0) $nether_enabled = 1;
+    }
+}
+
 @lazy
 function pay_wb() {
-    $wb_sold = clear @s minecraft:cobblestone;
+    ::pay_clearing.score = "wb_sold";
+    ::pay_clearing.item = "cobblestone";
+    ::pay_clearing.count = $wb_left_cost.get();
+    clear_the_fricking_items() with storage community_unlocker:community_unlocker pay_clearing;
+    //$wb_sold = clear @s minecraft:cobblestone;
     $wb_left_cost -= $wb_sold;
     if ($wb_left_cost <= 0) {
-        $wb_cost_overflow = $wb_left_cost;
-        $wb_cost_overflow *= -1;
         upgrade_wb();
     }
 }

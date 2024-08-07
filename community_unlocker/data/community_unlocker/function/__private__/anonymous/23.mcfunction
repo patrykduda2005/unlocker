@@ -1,0 +1,2 @@
+execute if entity @s at @s if score $gold_block_left_cost __variable__ matches 1.. run function community_unlocker:__private__/anonymous/22
+execute if score $gold_block_left_cost __variable__ matches ..0 run scoreboard players set $nether_enabled __variable__ 1
