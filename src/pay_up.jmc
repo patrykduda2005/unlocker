@@ -19,6 +19,7 @@ function pay_item(leitem) {
         ::pay_clearing.item = "$leitem";
         ::pay_clearing.count = $$leitem_left_cost.get();
         clear_the_fricking_items() with storage community_unlocker:community_unlocker pay_clearing;
+        $leitem_paid:@s += $$leitem_sold;
         $$leitem_left_cost -= $$leitem_sold;
     }
 }
@@ -61,8 +62,8 @@ function figure_out_mining_cost() {
         if ($nether_star_left_cost <= 0) upgrade_mining();
     }
     execute as @s if score $mining_tier __variable__ matches 3 run {
-        pay_item(nether_star);
-        if ($nether_star_left_cost <= 0) upgrade_mining();
+        pay_item(sculk_catalyst);
+        if ($sculk_catalyst_left_cost <= 0) upgrade_mining();
     }
     execute as @s if score $mining_tier __variable__ matches 4 run {
         pay_item(piglin_head);

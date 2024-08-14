@@ -1,6 +1,5 @@
 function __set_wb_distance() {
-    $wb_left_cost = $wb_distance;
-    $wb_left_cost *= 10;
+    $wb_left_cost = $wb_overall_cost;
     $scoreboard players set $wb_distance __variable__ $(distance);
     __update_dyn_variables();
     __update_wb() with storage minecraft:__variable__ wb;
@@ -18,9 +17,21 @@ function __update_wb() {
 
 
 function upgrade_wb() {
-    $wb_distance *= 2;
+    if ($wb_distance < 400) {
+        $wb_distance *= 2;
+        if ($wb_overall_cost < 800) {
+            $wb_overall_cost = $wb_distance;
+            $wb_overall_cost *= 10;
+        }
+    } else if ($wb_distance > 6000) {
+        $wb_overall_cost *= 2;
+    } else {
+        $wb_distance += 150;
+    }
+    $wb_left_cost = $wb_overall_cost;
+
     __update_wb_distance();
-    $wb_left_cost = $wb_distance;
-    $wb_left_cost *= 10;
-    $wb_left_cost -= $wb_cost_overflow;
+    //$wb_left_cost = $wb_distance;
+    //$wb_left_cost *= 10;
+    //$wb_left_cost -= $wb_cost_overflow;
 }

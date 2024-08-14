@@ -69,14 +69,14 @@ function food_tier() {
         }
     }
 
-    if($food_tier >= 3) {
+    if($food_tier >= 4) {
         execute as @a run {
-            ItemSwapper.swap_to_vanilla_item(item="432");
+            ItemSwapper.swap_to_vanilla_item(item="434");
             ItemSwapper.swap_to_vanilla_item(item="433");
         }
     } else {
         execute as @a run {
-            ItemSwapper.swap_to_dummy_item(item="432");
+            ItemSwapper.swap_to_dummy_item(item="434");
             ItemSwapper.swap_to_dummy_item(item="433");
         }
     }
@@ -139,11 +139,13 @@ function mining_tier() {
         execute as @a run {
             ItemSwapper.swap_to_vanilla_item(item="438");
             ItemSwapper.swap_to_vanilla_item(item="441");
+            ItemSwapper.swap_to_vanilla_item(item="444");
         }
     } else {
         execute as @a run {
             ItemSwapper.swap_to_dummy_item(item="438");
             ItemSwapper.swap_to_dummy_item(item="441");
+            ItemSwapper.swap_to_dummy_item(item="444");
         }
     }
 

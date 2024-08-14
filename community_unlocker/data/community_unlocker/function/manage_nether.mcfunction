@@ -1,1 +1,1 @@
-execute if score $nether_enabled __variable__ matches 0 run function community_unlocker:__private__/if_else/11
+execute if score $nether_enabled __variable__ matches 0 run function community_unlocker:__private__/if_else/15

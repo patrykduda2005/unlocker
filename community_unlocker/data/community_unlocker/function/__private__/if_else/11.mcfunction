@@ -1,2 +1,2 @@
-execute as @a at @s if block ~ ~ ~ minecraft:nether_portal run tellraw @s {"text":"NETHER KURWA WYLONCONY","color":"red","type":"text"}
-execute as @a at @s if block ~ ~ ~ minecraft:nether_portal run setblock ~ ~ ~ air
+scoreboard players operation $wb_overall_cost __variable__ = $wb_distance __variable__
+scoreboard players operation $wb_overall_cost __variable__ *= 10 __int__

@@ -1,3 +1,4 @@
+scoreboard players enable @s info
 scoreboard players enable @s upgrade
 scoreboard players enable @s pay_wb
 scoreboard players enable @s pay_food

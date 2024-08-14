@@ -1,6 +1,60 @@
+Trigger.add(
+    info,
+    () => {
+        info();
+    }
+);
+
+@lazy
+function tell_your_accomplishments(leitem) {
+    execute at @s as @a[scores={$leitem_paid=1..}] run {
+        Text.tellraw(
+            @p,
+            "&<bold, @s, aqua>'s &c$leitem &<aqua>paid: &7&<$leitem_paid:@s>"
+        );
+    }
+}
+
+@lazy
+function mining_people_paid() {
+    execute if score $mining_tier __variable__ matches 0 expand {
+        tell_your_accomplishments(cobbled_deepslate);
+        tell_your_accomplishments(coal);
+    }
+    execute if score $mining_tier __variable__ matches 1 expand {
+        tell_your_accomplishments(nautilus_shell);
+    }
+    execute if score $mining_tier __variable__ matches 2 expand {
+        tell_your_accomplishments(nether_star);
+    }
+    execute if score $mining_tier __variable__ matches 3 expand {
+        tell_your_accomplishments(sculk_catalyst);
+    }
+    execute if score $mining_tier __variable__ matches 4 expand {
+        tell_your_accomplishments(piglin_head);
+        tell_your_accomplishments(dragon_head);
+        tell_your_accomplishments(dragon_egg);
+    }
+}
+
+@lazy
+function food_people_paid() {
+    execute if score $food_tier __variable__ matches 0 expand {
+        tell_your_accomplishments(rotten_flesh);
+        tell_your_accomplishments(spider_eye);
+    }
+    execute if score $food_tier __variable__ matches 1 expand {
+        tell_your_accomplishments(pufferfish);
+        tell_your_accomplishments(tropical_fish);
+    }
+    execute if score $food_tier __variable__ matches 2 expand {
+        tell_your_accomplishments(cake);
+    }
+    execute if score $food_tier __variable__ matches 3 expand {
+        tell_your_accomplishments(cobweb);
+    }
+}
 function info() {
-    Text.tellraw(
-        @s,
-        ""
-    );
+    mining_people_paid();
+    food_people_paid();
 }

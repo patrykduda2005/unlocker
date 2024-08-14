@@ -1,0 +1,2 @@
+execute if score $wb_distance __variable__ matches 6001.. run function community_unlocker:__private__/if_else/13
+execute if score __if_else__ __variable__ matches 0 run scoreboard players add $wb_distance __variable__ 150

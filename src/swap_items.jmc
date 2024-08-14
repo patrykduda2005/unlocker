@@ -48,6 +48,8 @@ class ItemSwapper {
                 ::clearing.item = "diamond";
             case MODEL.NETHERITE_INGOT:
                 ::clearing.item = "netherite_ingot";
+            case MODEL.ANVIL:
+                ::clearing.item = "anvil";
         }
     }
 

@@ -59,6 +59,8 @@ class CustomItem {
                 __create_item_data_storage({ "rarity": "common", "visible_item_name": "Diamond"});
             case MODEL.NETHERITE_INGOT:
                 __create_item_data_storage({ "rarity": "common", "visible_item_name": "Netherite Ingot"});
+            case MODEL.ANVIL:
+                __create_item_data_storage({ "rarity": "common", "visible_item_name": "Anvil"});
         }
 
     }

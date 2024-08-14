@@ -78,6 +78,7 @@ TextProp.hoverItem("dragon_head", {"id":"minecraft:dragon_head"});
 TextProp.hoverItem("dragon_egg", {"id":"minecraft:dragon_egg"});
 TextProp.hoverItem("gold_block", {"id":"minecraft:gold_block"});
 TextProp.hoverItem("cobblestone", {"id":"minecraft:cobblestone"});
+TextProp.hoverItem("sculk_catalyst", {"id":"minecraft:sculk_catalyst"});
 
 @lazy
 function food_cost() {
@@ -142,7 +143,7 @@ function mining_cost() {
     execute if score $mining_tier __variable__ matches 3 expand {
         Text.tellraw(
             @s,
-            "&csth left: &7&<$nether_star_left_cost>"
+            "&cSkulk catalyst left: &7&<$skulk_catalyst_left_cost, sculk_catalyst>"
         );
     }
     execute if score $mining_tier __variable__ matches 4 expand {

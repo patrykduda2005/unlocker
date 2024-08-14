@@ -3,6 +3,7 @@ function __item_pay_scoreboards(leitem) {
     $$leitem_left_cost = 0;
     $$leitem_cost_overflow = 0;
     $$leitem_sold = 0;
+    scoreboard objectives add $leitem_paid dummy;
 }
 
 @lazy
@@ -66,7 +67,8 @@ function __setup_paying_scoreboards() {
                 "dragon_head",
                 "dragon_egg",
                 "gold_block",
-                "wb"
+                "wb",
+                "skulk_catalyst"
             ],
             [
                 "256",
@@ -83,7 +85,8 @@ function __setup_paying_scoreboards() {
                 "1",
                 "1",
                 "64",
-                "100"
+                "100",
+                "1"
             ]
         ]
     );
@@ -91,7 +94,6 @@ function __setup_paying_scoreboards() {
 
 
 function __setup_gamerules() {
-    //gamerule doLimitedCrafting true;
     gamerule reducedDebugInfo true;
 }
 
@@ -105,6 +107,7 @@ function setup_once() {
         $food_tier = 0;
         $mining_tier = 0;
         $wb_tier = 0;
+        $wb_overall_cost = 100;
         __setup_paying_scoreboards();
         __set_wb_distance(distance="10");
         $didrun = 1;
@@ -116,6 +119,7 @@ function reset_all() {
     $food_tier = 0;
     $mining_tier = 0;
     $wb_tier = 0;
+    $wb_overall_cost = 100;
     __setup_paying_scoreboards();
     __set_wb_distance(distance="10");
 }
