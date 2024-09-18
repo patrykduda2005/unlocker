@@ -137,13 +137,13 @@ function mining_cost() {
     execute if score $mining_tier __variable__ matches 2 expand {
         Text.tellraw(
             @s,
-            "&cNether star left: &7&<$nether_star_left_cost, nether_star>"
+            "&cKilled warden left: &71"
         );
     }
     execute if score $mining_tier __variable__ matches 3 expand {
         Text.tellraw(
             @s,
-            "&cSkulk catalyst left: &7&<$skulk_catalyst_left_cost, sculk_catalyst>"
+            "&cNether star left: &7&<$nether_star_left_cost, nether_star>"
         );
     }
     execute if score $mining_tier __variable__ matches 4 expand {
@@ -174,8 +174,7 @@ function tellraw() {
     );
     food_cost();
     tellraw @s "";
-    tellraw @s "";
-
+    tellraw @s "-----------------------------------------------------";
 
 
 
@@ -189,8 +188,7 @@ function tellraw() {
     );
     mining_cost();
     tellraw @s "";
-    tellraw @s "";
-
+    tellraw @s "-----------------------------------------------------";
 
 
 
@@ -207,7 +205,7 @@ function tellraw() {
         "&cCobble left: &7&<$wb_left_cost, cobblestone>"
     );
     tellraw @s "";
-    tellraw @s "";
+    tellraw @s "-----------------------------------------------------";
 
 
 

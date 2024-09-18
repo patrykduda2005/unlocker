@@ -1,0 +1,2 @@
+execute if entity @s at @s if score $nautilus_shell_left_cost __variable__ matches 1.. run function community_unlocker:__private__/anonymous/27
+execute if score $nautilus_shell_left_cost __variable__ matches ..0 run scoreboard players add $mining_tier __variable__ 1

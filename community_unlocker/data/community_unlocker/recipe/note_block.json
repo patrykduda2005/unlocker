@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "redstone",
+    "pattern": [
+        "###",
+        "#X#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "minecraft:planks"
+        },
+        "X": {
+            "item": "minecraft:note_block"
+        }
+    },
+    "result": {
+        "id": "minecraft:jukebox",
+        "count": 1
+    }
+}

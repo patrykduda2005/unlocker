@@ -1,4 +1,4 @@
-import "loot_tables";
+//import "loot_tables";
 import "craftings";
 import "dyn_variables";
 import "setup";
@@ -12,6 +12,24 @@ import "wb";
 import "nether";
 import "weed";
 
+
+
+new advancement(killed_warden)
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:warden"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "community_unlocker:warden_killed"
+  }
+}
 
 
 

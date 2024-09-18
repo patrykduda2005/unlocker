@@ -8,6 +8,12 @@ function upgrade_mining() {
     $mining_tier += 1;
 }
 
+function warden_killed() {
+    if ($mining_tier == 3) {
+        upgrade_mining();
+    }
+}
+
 function clear_the_fricking_items() {
     $execute store result score $$(score) __variable__ run clear @s minecraft:$(item) $(count);
 }
@@ -57,13 +63,14 @@ function figure_out_mining_cost() {
         pay_item(nautilus_shell);
         if ($nautilus_shell_left_cost <= 0) upgrade_mining();
     }
-    execute as @s if score $mining_tier __variable__ matches 2 run {
+    //execute as @s if score $mining_tier __variable__ matches 2 run {
+    //    pay_item(nether_star);
+    //    if ($nether_star_left_cost <= 0) upgrade_mining();
+    //}
+    execute as @s if score $mining_tier __variable__ matches 3 run {
+        tellraw @s "Admin musi to naprawic";
         pay_item(nether_star);
         if ($nether_star_left_cost <= 0) upgrade_mining();
-    }
-    execute as @s if score $mining_tier __variable__ matches 3 run {
-        pay_item(sculk_catalyst);
-        if ($sculk_catalyst_left_cost <= 0) upgrade_mining();
     }
     execute as @s if score $mining_tier __variable__ matches 4 run {
         pay_item(piglin_head);
@@ -80,6 +87,7 @@ function pay_food() {
 
 function pay_mining() {
     if ($mining_tier > 4) return;
+    figure_out_mining_cost();
 }
 
 function pay_neth() {
@@ -96,6 +104,7 @@ function pay_wb() {
     ::pay_clearing.count = $wb_left_cost.get();
     clear_the_fricking_items() with storage community_unlocker:community_unlocker pay_clearing;
     //$wb_sold = clear @s minecraft:cobblestone;
+    wb_paid:@s += $wb_sold;
     $wb_left_cost -= $wb_sold;
     if ($wb_left_cost <= 0) {
         upgrade_wb();

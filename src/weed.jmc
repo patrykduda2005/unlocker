@@ -2,6 +2,8 @@
 function weed() {
     execute as @e[type=item, nbt={Item:{id:"minecraft:dried_kelp_block"}}] at @s if block ~ ~ ~ minecraft:campfire expand {
         effect give @a[distance=..8] minecraft:nausea 20 255 true;
+        effect give @a[distance=..8] minecraft:blindness 20 20 true;
+        effect give @a[distance=..8] minecraft:darkness 20 20 true;
         kill @s;
     } 
 }

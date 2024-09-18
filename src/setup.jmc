@@ -77,7 +77,7 @@ function __setup_paying_scoreboards() {
                 "25",
                 "128",
                 "128",
-                "512",
+                "1024",
                 "128",
                 "10",
                 "1",
@@ -123,5 +123,3 @@ function reset_all() {
     __setup_paying_scoreboards();
     __set_wb_distance(distance="10");
 }
-
-worldborder center 0 0;

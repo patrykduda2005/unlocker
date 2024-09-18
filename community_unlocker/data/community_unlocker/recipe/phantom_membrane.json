@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        " X ",
+        "X X",
+        " X "
+    ],
+    "key": {
+        "X": {
+            "item": "minecraft:feather"
+        }
+    },
+    "result": {
+        "id": "minecraft:phantom_membrane"
+    }
+}

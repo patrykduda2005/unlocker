@@ -36,7 +36,7 @@ scoreboard players set $cobbled_deepslate_left_cost __variable__ 0
 scoreboard players set $cobbled_deepslate_cost_overflow __variable__ 0
 scoreboard players set $cobbled_deepslate_sold __variable__ 0
 scoreboard objectives add cobbled_deepslate_paid dummy
-scoreboard players set $cobbled_deepslate_left_cost __variable__ 512
+scoreboard players set $cobbled_deepslate_left_cost __variable__ 1024
 scoreboard players set $coal_left_cost __variable__ 0
 scoreboard players set $coal_cost_overflow __variable__ 0
 scoreboard players set $coal_sold __variable__ 0

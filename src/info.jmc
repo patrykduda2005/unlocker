@@ -55,6 +55,7 @@ function food_people_paid() {
     }
 }
 function info() {
+    tell_your_accomplishments(wb);
     mining_people_paid();
     food_people_paid();
 }

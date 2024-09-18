@@ -9,6 +9,10 @@ function __set_wb_distance() {
 function __update_wb_distance() {
     __update_dyn_variables();
     __update_wb() with storage minecraft:__variable__ wb;
+    $wb_distance_neth = $wb_distance;
+    $wb_distance_neth /= 4;
+    minecraft:__variable__::wb.distance = $wb_distance_neth.get();
+    //execute in minecraft:the_nether run __update_wb() with storage minecraft:__variable__ wb;
 }
 
 function __update_wb() {
